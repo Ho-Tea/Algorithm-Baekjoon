@@ -1,7 +1,7 @@
 # 🧸 Algorithm - Baekjoon
 
 
-## 📍Silver  ㅇㅇ
+## 📍Silver 
 ### 🔎Brute-force Search
 - 완전탐색(가능한 경우를 일일이 다 탐색하는 것)
   - 시간이 최대로 들어간다.
