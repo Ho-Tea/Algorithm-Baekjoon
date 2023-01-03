@@ -1,6 +1,6 @@
 # 🧸 Algorithm - Baekjoon
 
-### [🧮MATH] (https://github.com/Ho-Tea/Algorithm-Baekjoon/tree/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%98%ED%95%99) 
+### [🧮 [MATH]]
 <br>
 
 ### [🔎Brute-Force] (https://github.com/Ho-Tea/Algorithm-Baekjoon/tree/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
@@ -10,3 +10,4 @@
 
 
 
+[MATH] : https://github.com/Ho-Tea/Algorithm-Baekjoon/tree/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%88%98%ED%95%99
