@@ -2,9 +2,29 @@
 
 
 ## 📍Silver
-### ⛏DFS
-- Step 1: 스택에 시작 노드를 넣습니다.
-- Step 2: 스택이 비어있으면 실행을 멈추고 False를 반환합니다.
-- Step 3: 스택의 맨 위 노드가 찾고자 하는 노드라면 탐색을 종료하고 True를 반환합니다.
-- Step 4: Step 3에서 스택의 맨 위 노드가 찾고자 하는 노드가 아니라면 해당 노드를 POP합니다. <br>스택에 들어온 적이 없는 POP한 노드의 모든 이웃 노드를 찾아서 순서대로 스택에 넣습니다.
-- Step 5: Step 3로 돌아갑니다.
+- 1260(DFS와BFS)
+### ⛏DFS (Stack)
+
+- 자기 자신을 호출하는 순환 알고리즘의 형태를 지닌다 (재귀 or 스택)
+  - 순환 호출 이용(재귀)
+  - 명시적인 스택 사용 - > 스택 자료구조를 생성(Linked List)
+
+- 방문노드 검사 필수
+
+```java
+// 재귀
+
+// dfs, 재귀, 인접 행렬, i 정점부터 시작한다.
+    public static void dfs(int i) {
+		visit[i] = true;
+		System.out.print(i + " ");
+		
+		for(int j=1; j<n+1; j++) {
+			if((map[i][j] == 1 || map[j][i]) == 1)&& visit[j] == false) {
+				dfs(j);
+			}
+		}
+	}
+```
+
+- <img src="../Image/DFS.png" weight = "300">
