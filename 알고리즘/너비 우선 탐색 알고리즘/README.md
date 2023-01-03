@@ -3,4 +3,4 @@
 
 ## 📍Silver
 ### 🛠BFS
-<img src="../Image/BFSvsDFS.png">
+<img src="../Image/BFSvsDFS.png" weight=300>
