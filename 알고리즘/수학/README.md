@@ -2,7 +2,14 @@
 
 
 ## 📍Silver
-### 🧮MATH
+### 🧮MATH & Tip
+
+- ### Tip
+  - 공간복잡도가 문제면 **배열**보다는 **리스트**를 사용하자
+  - 시간복잡도가 문제면 같은 2중 반복문이더라도 표본이 적게끔 구성하자
+  - 체스판 같은 것을 이동할 때는 `{1,0} , {0,1}, {-1,0}, {0,-1}`과 같이 구성하자
+  - 시간복잡도의 경우 함수를 용하여 하나씩 출력보다는 <br>`StringBuilder`를 이용하여 한번에 출력하게끔 구성하자(1655번 문제)
+
 - 2869(달팽이는 올라가고 싶다)
   - ``` java
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
