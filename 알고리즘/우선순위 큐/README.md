@@ -7,6 +7,12 @@
 	- `Comparable`를 구현하는 특정 클래스를 이용
 - 가운데를 말해요(1655번)
     - `maxhip`(큰거를 출력) 하는 우선순위 큐와 <br>`minhip`(작은것을 출력)하는 우선순위 큐를 두어 가운데 값을 가져올수 있게끔 구성
+- 문제집(1766번)
+    - 차수를 이용한 풀이(`indegree`)
+    - `List<Integer>[] list;` 이용
+    - 위상정렬을 이용하여 풀이
+        - 위상정렬은 비순환 방향 그래프에서 정점을 선형으로 정렬하는 것
+        - 위상정렬을 구현하는 방법은 `BFS`(indegree)와 `DFS`, `Priority Q`(indegree)가 존재
 
 ### 🎱 Priority Queue
 - `PriorityQueue`란 우선순위 큐 로써 일반적인 큐의 구조 `FIFO`를 가지면서 데이터가 들어온 순서대로 데이터가 나가는 것이 아닌 <br> **우선순위**를 먼저 결정하고 그 우선순위가 높은 데이터가 먼저 나가는 자료구조이다
@@ -32,7 +38,7 @@ static class Abs implements Comparable<Abs> {
         @Override
         public int compareTo(Abs o) {
             if (Math.abs(this.num) > Math.abs(o.num)) {
-                return 1;
+                return 1;   //오름차순으로 정렬하겠다는 뜻.
             } else if (Math.abs(this.num) < Math.abs(o.num)) {
                 return -1;
             } else {
