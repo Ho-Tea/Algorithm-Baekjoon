@@ -1,69 +1,74 @@
 import java.io.*;
 import java.util.*;
 
-
-
 public class Main {
-  public static void main(String[] args) throws IOException{
+  static int [][] map;
+  static int [][] map2;
+  static boolean [] visit;
+  static boolean [] visit2;
+  static List<Integer> chain;
+  static List<Integer> chain2;
+  static Queue<Integer> q;
+  static int N;
+  public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st = new StringTokenizer(br.readLine());
-    int N = Integer.parseInt(st.nextToken());
+    N = Integer.parseInt(st.nextToken());
     int M = Integer.parseInt(st.nextToken());
     int V = Integer.parseInt(st.nextToken());
 
-    Main test = new Main();
-    int startNode = 0;
-    int endNode = 0;
-    boolean[] visited = new boolean[N+1];
-    int[][] map = new int[N+1][N+1];
+    map = new int[N+1][N+1];
+    visit = new boolean[N+1];
+    map2 = new int[N+1][N+1];
+    visit2 = new boolean[N+1];
 
-    
+    chain = new ArrayList<>();
+    chain2 = new ArrayList<>();
+    q = new LinkedList<>();
 
-    for(int i = 0; i < M; i++){ //map 초기화
-      StringTokenizer sd = new StringTokenizer(br.readLine());
-      startNode = Integer.parseInt(sd.nextToken());
-      endNode = Integer.parseInt(sd.nextToken());
-      map[startNode][endNode] = 1;
+    for(int i = 0; i < M; i++){
+      StringTokenizer st1 = new StringTokenizer(br.readLine());
+      int firstNode = Integer.parseInt(st1.nextToken());
+      int secondNode = Integer.parseInt(st1.nextToken());
+
+      map[firstNode][secondNode] = 1;
+      map2[firstNode][secondNode] = 1;
     }
-    
-    visited = test.init(N, visited);
-    test.dfs(visited, map, V);
+    dfs(V);
+    for(int node : chain){
+      System.out.print(node + " ");
+    }
     System.out.println();
-    visited = test.init(N, visited);
-    test.bfs(visited, map, V);
 
-  }
-  boolean[] init(int N, boolean[] visited){
-    for(int i = 1; i <= N; i++){ //visit 초기화
-      visited[i] = false;
+    bfs(V);
+    for(int node : chain2){
+      System.out.print(node+ " ");
     }
-    return visited;
+    
   }
 
-  void dfs(boolean[] visited, int[][] map, int i ){
-      visited[i] = true;
-      System.out.print(i+ " ");
-      for(int j = 1; j < visited.length; j++){
-        if((map[i][j] == 1 || map[j][i] == 1) && visited[j] == false){
-          dfs(visited, map, j);
-        }
+  public static void dfs(int i){
+    visit[i] = true;
+    chain.add(i);
+    for(int j = 1;j<N+1;j++){
+      if((map[i][j] == 1 || map[j][i] == 1) && visit[j] == false){
+        dfs(j);
       }
+    }
   }
 
-  void bfs(boolean[] visited, int[][] map, int i ){
-    Queue<Integer> q = new LinkedList<>();
-		q.offer(i);
-		visited[i] = true;
-
-		while(!q.isEmpty()) {
-			int temp = q.poll();
-			System.out.print(temp + " ");
-			for(int j=1; j < visited.length; j++) {
-				if((map[temp][j] == 1|| map[j][temp] == 1) && visited[j] == false) {
-					q.offer(j);
-					visited[j] = true;
-				}
-			}
-		}
+  public static void bfs(int i){
+    q.offer(i);
+    visit2[i] = true;
+    while(!q.isEmpty()){
+      int node = q.poll();
+      chain2.add(node);
+      for(int j = 1; j < N +1; j ++){
+        if((map2[node][j] == 1 || map2[j][node] == 1) && visit2[j] == false){
+          q.offer(j);
+          visit2[j] = true;
+      }
+    }
   }
+}
 }
