@@ -54,7 +54,7 @@ public class Main {
             for (int[] i : ints) {
                 if (digest[i[0]] > digest[node] + i[1]) {
                     digest[i[0]] = digest[node] + i[1];
-                    pq.offer(new int[]{i[0], digest[i[0]]});
+                    pq.offer(new int[]{i[0], digest[i[0]]}); // 가중치가 짧은 곳부터 탐색하기 위해
                 }
             }
         }
@@ -67,5 +67,4 @@ public class Main {
             System.out.println(digest[i]);
         }
     }
-
 }
